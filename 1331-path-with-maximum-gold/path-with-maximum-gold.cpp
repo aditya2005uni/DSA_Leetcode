@@ -4,11 +4,7 @@ class Solution {
         if(i<0 || i>=m || j<0 || j>=n || grid[i][j]==0){
             return 0;
         }
-        //int ans=0;
-        // ans=max(ans,fun(grid,i+1,j,m,n));
-        // ans=max(ans,fun(grid,i+1,j,m,n));
-        // ans=max(ans,fun(grid,i+1,j,m,n));
-        // ans=max(ans,fun(grid,i+1,j,m,n));
+    
         int temp=grid[i][j];
         grid[i][j]=0;
         int a=fun(grid,i+1,j,m,n);
