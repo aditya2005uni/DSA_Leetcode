@@ -49,6 +49,10 @@ class Solution {
 
 
 
+
+
+
+
 // class Solution {
 //     public ListNode fun(ListNode curr,ListNode prev){
 //         if(curr==null){
