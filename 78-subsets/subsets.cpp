@@ -1,12 +1,11 @@
 class Solution {
-    void fun(vector<int>& nums,vector<vector<int>>&ans,vector<int>&out,int i){
-        if(i>=nums.size()){
+    void fun(vector<int>& nums,vector<vector<int>>&ans,vector<int>out,int i){
+        if(i==nums.size()){
             ans.push_back(out);
             return;
         }
-        out.push_back(nums[i]);
         fun(nums,ans,out,i+1);
-        out.pop_back();
+        out.push_back(nums[i]);
         fun(nums,ans,out,i+1);
 
     }
