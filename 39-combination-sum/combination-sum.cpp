@@ -1,6 +1,5 @@
 class Solution {
-    public:
-    void fun(vector<int>& candidates, int tar,vector<vector<int>>&ans,vector<int>&out,int i){
+    void fun(vector<int>& candidates, int tar,int i,vector<vector<int>>&ans,vector<int>&out){
         if(tar==0){
             ans.push_back(out);
             return;
@@ -12,70 +11,16 @@ class Solution {
             return;
         }
         out.push_back(candidates[i]);
-        fun(candidates,tar-candidates[i],ans,out,i);
+        fun(candidates,tar-candidates[i],i,ans,out);
         out.pop_back();
-        fun(candidates,tar,ans,out,i+1);
+        fun(candidates,tar,i+1,ans,out);
+
     }
 public:
     vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
         vector<vector<int>>ans;
         vector<int>out;
-        fun(candidates,target,ans,out,0);
+        fun(candidates,target,0,ans,out);
         return ans;
     }
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//class Solution {
-//     private:
-//     void fun(vector<vector<int>>&ans,vector<int>&out,int tar,vector<int>& candidates,int i){
-//         if(tar==0){
-//             ans.push_back(out);
-//             return;
-//         }
-//         if(i>=candidates.size()){
-//             return;
-//         }
-//         if(tar<0){
-//             return;
-//         }
-//         out.push_back(candidates[i]);
-//         fun(ans,out,tar-candidates[i],candidates,i);
-//         out.pop_back();
-//         fun(ans,out,tar,candidates,i+1);
-//     }
-// public:
-//     vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
-//         vector<vector<int>>ans;
-//         vector<int>out;
-//         int n=candidates.size();
-//         int i=0;
-//         fun(ans,out,target,candidates,i);
-//         return ans;
-//     }
-// };
