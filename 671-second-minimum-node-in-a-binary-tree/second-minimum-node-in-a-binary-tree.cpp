@@ -23,26 +23,26 @@ public:
     int findSecondMinimumValue(TreeNode* root) {
         vector<int>res;
         fun(root,res);
-        // set<int>st;
-        // for(auto i:res){
-        //     st.insert(i);
-        // }
-        // vector<int>ans;
-        // for(auto i:st){
-        //     ans.push_back(i);
-        // }
-        // int n=ans.size();
-        // if(n<2){
-        //     return -1;
-        // }
-        // return ans[n-2];
-
-        set<int> st(res.begin(), res.end()); 
-        if (st.size() < 2) {
+        set<int>st;
+        for(auto i:res){
+            st.insert(i);
+        }
+        vector<int>ans;
+        for(auto i:st){
+            ans.push_back(i);
+        }
+        int n=ans.size();
+        if(n<2){
             return -1;
         }
-        auto it = st.begin();
-        ++it; 
-        return *it;
+        return ans[1];
+
+        // set<int> st(res.begin(), res.end()); 
+        // if (st.size() < 2) {
+        //     return -1;
+        // }
+        // auto it = st.begin();
+        // ++it; 
+        // return *it;
     }
 };
